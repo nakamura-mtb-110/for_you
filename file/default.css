@@ -1,254 +1,84 @@
-```css
-body{
-    margin:0;
-    padding:0;
-    overflow:hidden;
-    color:white;
-    font-family:'Segoe UI',sans-serif;
-
-    background:
-    radial-gradient(circle at top,
-    #2b1055 0%,
-    #120c2c 50%,
-    #000 100%);
-
-    min-height:100vh;
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #000; /* solid black background, images removed */
+  color: white;
+  font-size: 14px;
+  font-family: sans-serif;
+  overflow: auto;
+}
+a {
+  color: white;
+  font-size: 14px;
+}
+#main {
+  width: 100%;
+}
+#wrap {
+  position: relative;
+  margin: 0 auto;
+  width: 1100px;
+  height: 680px;
+  margin-top: 10px;
+}
+#text {
+  width: 272px;
+  height: 560px;
+  left: 188px;
+  top: 80px;
+  position: absolute;
+}
+#code {
+  display: none;
+  color: rgb(196, 255, 255);
+  font-size: 16px;
+  margin-top: 70px;
+  line-height: 25px;
+  font-size: larger;
+  font-weight: bolder;
+}
+#clock-box {
+  position: absolute;
+  left: 60px;
+  top: 550px;
+  font-size: 28px;
+  display: none;
+}
+#clock-box a {
+  font-size: 28px;
+  text-decoration: none;
+}
+#clock {
+  margin-left: 48px;
+}
+#clock .digit {
+  font-size: 64px;
+}
+#canvas {
+  margin: 0 auto;
+  width: 1100px;
+  height: 680px;
+}
+#error {
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 60px;
+  display: none;
+}
+.hand {
+  cursor: pointer;
+}
+.say {
+  margin-left: 5px;
+}
+.space {
+  margin-right: 150px;
 }
 
-/* Animated stars background */
-body::before{
-    content:"";
-    position:fixed;
-    inset:0;
-    background:
-    radial-gradient(white 1px, transparent 1px);
-    background-size:50px 50px;
-    opacity:.15;
-    animation:moveStars 80s linear infinite;
-    z-index:-2;
-}
-
-@keyframes moveStars{
-    from{
-        transform:translateY(0);
-    }
-    to{
-        transform:translateY(-1000px);
-    }
-}
-
-/* Moon glow */
-body::after{
-    content:"";
-    position:fixed;
-    top:60px;
-    right:80px;
-    width:140px;
-    height:140px;
-    border-radius:50%;
-    background:#fff9d6;
-    box-shadow:
-    0 0 60px rgba(255,255,255,.9),
-    0 0 120px rgba(255,255,255,.3);
-    z-index:-1;
-}
-
-a{
-    color:#ffd6ea;
-    text-decoration:none;
-}
-
-#main{
-    width:100%;
-}
-
-/* Responsive wrap */
-#wrap{
-    position:relative;
-    margin:auto;
-    width:min(1100px,95vw);
-    height:680px;
-    margin-top:20px;
-}
-
-/* Romantic glass panel */
-#text{
-    width:320px;
-    min-height:500px;
-
-    left:120px;
-    top:70px;
-    position:absolute;
-
-    padding:30px;
-    border-radius:30px;
-
-    background:
-    rgba(255,255,255,.08);
-
-    backdrop-filter:blur(18px);
-
-    border:
-    1px solid rgba(255,255,255,.12);
-
-    box-shadow:
-    0 10px 40px rgba(0,0,0,.35);
-
-    animation:
-    floatCard 5s ease infinite;
-}
-
-@keyframes floatCard{
-    0%,100%{
-        transform:translateY(0);
-    }
-
-    50%{
-        transform:translateY(-10px);
-    }
-}
-
-#code{
-    display:none;
-    color:#ffe7ff;
-    font-size:18px;
-    line-height:34px;
-    font-weight:600;
-    text-shadow:
-    0 0 12px rgba(255,180,220,.35);
-}
-
-/* Cute text glow */
-.say{
-    margin-left:5px;
-    animation:
-    fadeText .8s ease;
-}
-
-@keyframes fadeText{
-    from{
-        opacity:0;
-        transform:
-        translateY(10px);
-    }
-
-    to{
-        opacity:1;
-        transform:
-        translateY(0);
-    }
-}
-
-/* Clock */
-#clock-box{
-    position:absolute;
-    left:100px;
-    top:600px;
-
-    font-size:28px;
-    display:none;
-
-    color:#ffd7f1;
-    text-shadow:
-    0 0 20px hotpink;
-}
-
-#clock{
-    margin-left:48px;
-}
-
-#clock .digit{
-    font-size:60px;
-}
-
-/* Tree canvas */
-#canvas{
-    margin:0 auto;
-    width:100%;
-    height:680px;
-
-    filter:
-    drop-shadow(0 0 15px rgba(255,100,180,.2));
-}
-
-/* Error */
-#error{
-    margin:auto;
-    text-align:center;
-    margin-top:60px;
-    display:none;
-}
-
-/* Click hand */
-.hand{
-    cursor:pointer;
-}
-
-/* Cute message box */
 #message-box{
-    position:absolute;
-    margin-top:450px;
-    font-size:25px;
-    font-family:monospace;
-    color:#ffd2f3;
+  position: absolute;
+  margin-top:450px;
+  font-size: 25px;
+  font-family: monospace;
+
 }
-
-/* Floating hearts */
-.heart{
-    position:fixed;
-    font-size:22px;
-    pointer-events:none;
-    animation:
-    floatHeart linear forwards;
-    z-index:-1;
-}
-
-@keyframes floatHeart{
-    from{
-        transform:
-        translateY(100vh)
-        scale(.6);
-        opacity:0;
-    }
-
-    10%{
-        opacity:1;
-    }
-
-    to{
-        transform:
-        translateY(-120vh)
-        rotate(360deg);
-        opacity:0;
-    }
-}
-
-/* Mobile */
-@media(max-width:900px){
-
-#wrap{
-    width:100vw;
-    height:auto;
-}
-
-#text{
-    position:relative;
-    width:90%;
-    left:0;
-    top:0;
-    margin:auto;
-}
-
-#canvas{
-    width:100%;
-    height:auto;
-}
-
-#clock-box{
-    position:relative;
-    left:0;
-    top:0;
-    text-align:center;
-}
-}
-```
