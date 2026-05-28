@@ -1,184 +1,594 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+```html
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>🍫🎀𝓯𝓸𝓻 𝓼𝓸𝓶𝓮𝓸𝓷𝓮 𝓼𝓹𝓮𝓬𝓲𝓪𝓵🎀🍫</title>	    
-    <link type="text/css" rel="stylesheet" href="file/default.css">
-    <script type="text/javascript" src="file/jquery.min.js"></script>
-    <script type="text/javascript" src="file/jscex.min.js"></script>
-    <script type="text/javascript" src="file/jscex-parser.js"></script>
-    <script type="text/javascript" src="file/jscex-jit.js"></script>
-    <script type="text/javascript" src="file/jscex-builderbase.min.js"></script>
-    <script type="text/javascript" src="file/jscex-async.min.js"></script>
-    <script type="text/javascript" src="file/jscex-async-powerpack.min.js"></script>
-    <script type="text/javascript" src="file/function.js" charset="utf-8"></script>
-    <script type="text/javascript" src="file/love.js" charset="utf-8"></script>
-    <script>
-        function playAudio() {
-            var audio = document.getElementById("myAudio");
-            audio.play();
-        }
-    </script>
+<meta http-equiv="Content-Type"
+content="text/html; charset=UTF-8">
+
+<title>For Someone Special 💖</title>
+
+<link rel="stylesheet" href="file/default.css">
+
+<script src="file/jquery.min.js"></script>
+<script src="file/jscex.min.js"></script>
+<script src="file/jscex-parser.js"></script>
+<script src="file/jscex-jit.js"></script>
+<script src="file/jscex-builderbase.min.js"></script>
+<script src="file/jscex-async.min.js"></script>
+<script src="file/jscex-async-powerpack.min.js"></script>
+
+<script src="file/function.js"
+charset="utf-8"></script>
+
+<script src="file/love.js"
+charset="utf-8"></script>
+
+<style>
+/* Loading screen */
+#introOverlay{
+    position:fixed;
+    inset:0;
+    background:
+    radial-gradient(circle,
+    #2b1055,
+    #120c2c,
+    #000);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+
+    z-index:99999;
+    transition:1.2s ease;
+}
+
+.introTitle{
+    color:white;
+    font-size:3rem;
+    text-shadow:
+    0 0 20px hotpink;
+    margin-bottom:15px;
+}
+
+.introText{
+    color:#ffd8ef;
+    margin-bottom:30px;
+    font-size:1.2rem;
+}
+
+.startBtn{
+    border:none;
+    padding:18px 40px;
+    border-radius:50px;
+    cursor:pointer;
+    font-size:22px;
+
+    color:white;
+
+    background:
+    linear-gradient(
+    135deg,
+    #ff4d88,
+    #ff85b3);
+
+    box-shadow:
+    0 0 25px
+    rgba(255,0,128,.5);
+
+    transition:.3s;
+}
+
+.startBtn:hover{
+    transform:
+    scale(1.08);
+}
+
+/* Floating hearts */
+.float-heart{
+    position:fixed;
+    pointer-events:none;
+    animation:
+    floatHeart linear forwards;
+    z-index:-1;
+}
+
+@keyframes floatHeart{
+    from{
+        transform:
+        translateY(100vh)
+        scale(.5);
+        opacity:0;
+    }
+
+    10%{
+        opacity:1;
+    }
+
+    to{
+        transform:
+        translateY(-120vh)
+        rotate(360deg);
+        opacity:0;
+    }
+}
+
+/* Sparkles */
+.sparkle{
+    position:fixed;
+    width:4px;
+    height:4px;
+    border-radius:50%;
+    background:white;
+    opacity:.7;
+    animation:
+    sparkleAnim
+    4s linear infinite;
+}
+
+@keyframes sparkleAnim{
+    0%{
+        opacity:0;
+        transform:
+        translateY(0);
+    }
+
+    50%{
+        opacity:1;
+    }
+
+    100%{
+        opacity:0;
+        transform:
+        translateY(-40px);
+    }
+}
+</style>
 </head>
+
 <body>
-    <div id="main">
-        <div id="error"><a href="http://www.google.cn/chrome/intl/zh-CN/landing_chrome.html?hl=zh-CN&brand=CHMI">Chrome</a> (<a href="http://firefox.com.cn/download/">Firefox</a>)</div>
-        <audio autoplay="autoplay" height="100" width="100" id="myAudio">
-            <source src="aud.mp3" type="audio/mp3" />
-            <embed height="100" width="100" src="aud.mp3" />
-        </audio>
-        <div id="wrap">
-            <div id="text">
-                <div id="code">
-                    <span class="say"> ☘️ 𝒽𝒾𝓁𝑜𝑜𝑜 𝒽𝑜𝓌 𝒶𝓇𝑒 𝓎𝑜𝓊 𝓃𝑜𝓃𝑜 :) 🌕</span><br>
-                    <span class="say"> 👀 𝒾 𝒸𝑜𝓊𝓁𝒹 𝒹𝑜 𝒶 𝓇𝑒𝑔𝓊𝓁𝒶𝓇 𝓂𝑒𝓈𝓈𝒶𝑔𝑒 𝒶𝓃𝒹 𝓈𝑒𝓃𝒹 𝒾𝓉 🌿</span><br>
-                    <span class="say"> 🍫 𝒷𝓊𝓉 𝓉𝒽𝑒𝓃 𝒾 𝓈𝓉𝑜𝓅𝓅𝑒𝒹 ☄️ </span><br>
-                    <span class="say"> 🎀 𝒾 𝓇𝑒𝒶𝓁𝒾𝓏𝑒𝒹! 𝒾 𝓌𝒶𝓃𝓉𝑒𝒹 𝓉𝑜 𝒹𝑜 𝓈𝑜𝓂𝑒𝓉𝒽𝒾𝓃𝑔 𝓈𝓅𝑒𝒸𝒾𝒶𝓁 🍪 </span><br>
-                    <span class="say"> 🎁 𝒷𝑒𝒸𝒶𝓊𝓈𝑒 𝓎𝑜𝓊 𝒶𝓇𝑒 𝓈𝓅𝑒𝒸𝒾𝒶𝓁 <3 </span><br>
-					<span class="say"> 🎉 𝒽𝒶𝓅𝓅𝓎 𝒷𝒾𝓇𝓉𝒽𝒹𝒶𝓎 🎉 </span><br>
-					<span class="say"> 🍭 𝓂𝒶𝓎 𝓁𝒾𝒻𝑒 𝓈𝒽𝑜𝓌𝑒𝓇 𝓎𝑜𝓊 𝓌𝒾𝓉𝒽 𝑒𝓋𝑒𝓇𝓎𝓉𝒽𝒾𝓃𝑔 𝓎𝑜𝓊 𝓌𝒾𝓈𝒽 :) </span><br>
-                    <span class="say"> ❤️ 𝒾 𝓌𝒾𝓈𝒽 𝓎𝑜𝓊 𝓁𝑜𝓋𝑒 𝒾𝓉 ❤️ </span><br>
-                </div>
-            </div>
-            <div id="clock-box">
-                <span id="clock">577 days 0 hours 0 minutes 0 seconds</span> <!-- Change to "6940 days..." if needed -->
-            </div>
-            <canvas id="canvas" width="1100" height="680"></canvas>
-        </div>
-    </div>
 
-    <script>
-    (function() {
-        var canvas = $('#canvas');
-		
-        if (!canvas[0].getContext) {
-            $("#error").show();
-            return false;
-        }
+<!-- intro overlay -->
+<div id="introOverlay">
 
-        var width = canvas.width();
-        var height = canvas.height();        
-        canvas.attr("width", width);
-        canvas.attr("height", height);
+<h1 class="introTitle">
+Holla nour :)
+</h1>
 
-        var opts = {
-            seed: {
-                x: width / 2 - 20,
-                color: "rgb(190, 26, 37)",
-                scale: 2
-            },
-            branch: [
-                [535, 680, 570, 250, 500, 200, 30, 100, [
-                    [540, 500, 455, 417, 340, 400, 13, 100, [
-                        [450, 435, 434, 430, 394, 395, 2, 40]
-                    ]],
-                    [550, 445, 600, 356, 680, 345, 12, 100, [
-                        [578, 400, 648, 409, 661, 426, 3, 80]
-                    ]],
-                    [539, 281, 537, 248, 534, 217, 3, 40],
-                    [546, 397, 413, 247, 328, 244, 9, 80, [
-                        [427, 286, 383, 253, 371, 205, 2, 40],
-                        [498, 345, 435, 315, 395, 330, 4, 60]
-                    ]],
-                    [546, 357, 608, 252, 678, 221, 6, 100, [
-                        [590, 293, 646, 277, 648, 271, 2, 80]
-                    ]]
-                ]] 
-            ],
-            bloom: {
-                num: 700,
-                width: 1080,
-                height: 650,
-            },
-            footer: {
-                width: 1200,
-                height: 5,
-                speed: 10,
-            }
-        }
+<p class="introText">
+something special is waiting 💖
+</p>
 
-        var tree = new Tree(canvas[0], width, height, opts);
-        var seed = tree.seed;
-        var foot = tree.footer;
-        var hold = 1;
+<button class="startBtn"
+id="startExperience">
+click here cutie &lt;3
+</button>
 
-        canvas.click(function(e) {
-            playAudio();
-            var offset = canvas.offset(), x, y;
-            x = e.pageX - offset.left;
-            y = e.pageY - offset.top;
-            if (seed.hover(x, y)) {
-                hold = 0; 
-                canvas.unbind("click");
-                canvas.unbind("mousemove");
-                canvas.removeClass('hand');
-            }
-        }).mousemove(function(e) {
-            var offset = canvas.offset(), x, y;
-            x = e.pageX - offset.left;
-            y = e.pageY - offset.top;
-            canvas.toggleClass('hand', seed.hover(x, y));
-        });
+</div>
 
-        var seedAnimate = eval(Jscex.compile("async", function () {
-            seed.draw();
-            while (hold) {
-                $await(Jscex.Async.sleep(10));
-            }
-            while (seed.canScale()) {
-                seed.scale(0.95);
-                $await(Jscex.Async.sleep(10));
-            }
-            while (seed.canMove()) {
-                seed.move(0, 2);
-                foot.draw();
-                $await(Jscex.Async.sleep(10));
-            }
-        }));
+<div id="main">
 
-        var growAnimate = eval(Jscex.compile("async", function () {
-            do {
-                tree.grow();
-                $await(Jscex.Async.sleep(10));
-            } while (tree.canGrow());
-        }));
+<div id="error">
+Please use Chrome / Firefox
+</div>
 
-        var flowAnimate = eval(Jscex.compile("async", function () {
-            do {
-                tree.flower(2);
-                $await(Jscex.Async.sleep(10));
-            } while (tree.canFlower());
-        }));
+<audio id="myAudio" loop>
+<source src="aud.mp3"
+type="audio/mp3">
+</audio>
 
-        var moveAnimate = eval(Jscex.compile("async", function () {
-            tree.snapshot("p1", 240, 0, 610, 680);
-            while (tree.move("p1", 500, 0)) {
-                foot.draw();
-                $await(Jscex.Async.sleep(10));
-            }
-            foot.draw();
-            tree.snapshot("p2", 500, 0, 610, 680);
+<div id="wrap">
 
-            canvas.parent().css("background", "url(" + tree.toDataURL('image/png') + ")");
-            canvas.css("background", "#ffe");
-            $await(Jscex.Async.sleep(300));
-            canvas.css("background", "none");
-        }));
+<div id="text">
+<div id="code">
 
-        var textAnimate = eval(Jscex.compile("async", function () {
-            $("#code").show().typewriter();
-        }));
-	    
-        var runAsync = eval(Jscex.compile("async", function () {
-            $await(seedAnimate());
-            $await(growAnimate());
-            $await(flowAnimate());
-            $await(moveAnimate());
-            textAnimate().start();
-        }));
+<span class="say">
+☘️ hilooo how are you nono :)
+</span><br>
 
-        runAsync().start();
-    })();
-    </script>
+<span class="say">
+👀 i could do a regular message
+and send it
+</span><br>
+
+<span class="say">
+🍫 but then i stopped ☄️
+</span><br>
+
+<span class="say">
+🎀 i realized...
+i wanted something special
+</span><br>
+
+<span class="say">
+🎁 because you are special &lt;3
+</span><br>
+
+<span class="say">
+🎉 happy birthday 🎉
+</span><br>
+
+<span class="say">
+🍭 may life shower you
+with everything you wish :)
+</span><br>
+
+<span class="say">
+❤️ i hope you love it ❤️
+</span><br>
+
+</div>
+</div>
+
+<div id="clock-box">
+<span id="clock">
+577 days 💖
+</span>
+</div>
+
+<canvas id="canvas"
+width="1100"
+height="680"></canvas>
+
+</div>
+</div>
+
+<script>
+/* start experience */
+document
+.getElementById(
+"startExperience")
+
+.addEventListener(
+"click",function(){
+
+document
+.getElementById(
+"myAudio")
+.play();
+
+document
+.getElementById(
+"introOverlay")
+.style.opacity="0";
+
+setTimeout(()=>{
+document
+.getElementById(
+"introOverlay")
+.style.display="none";
+},1000);
+
+});
+
+/* floating hearts */
+const hearts=
+["💖","💕","💜","💙",
+"💛","🧡","❤️"];
+
+function createHeart(){
+
+const h=
+document.createElement("div");
+
+h.className=
+"float-heart";
+
+h.innerHTML=
+hearts[
+Math.floor(
+Math.random()
+*hearts.length)];
+
+h.style.left=
+Math.random()*100
++"vw";
+
+h.style.fontSize=
+(Math.random()*20+18)
++"px";
+
+h.style.animationDuration=
+(Math.random()*6+5)
++"s";
+
+document.body
+.appendChild(h);
+
+setTimeout(()=>{
+h.remove();
+},10000);
+}
+
+setInterval(
+createHeart,
+300);
+
+/* sparkles */
+for(let i=0;i<60;i++){
+
+const s=
+document.createElement(
+"div");
+
+s.className=
+"sparkle";
+
+s.style.left=
+Math.random()*100+
+"vw";
+
+s.style.top=
+Math.random()*100+
+"vh";
+
+s.style.animationDelay=
+Math.random()*4+"s";
+
+document.body
+.appendChild(s);
+}
+
+/* tree animation */
+(function() {
+
+var canvas =
+$('#canvas');
+
+if (!canvas[0]
+.getContext) {
+
+$("#error")
+.show();
+
+return false;
+}
+
+var width =
+canvas.width();
+
+var height =
+canvas.height();
+
+canvas.attr(
+"width",
+width);
+
+canvas.attr(
+"height",
+height);
+
+var opts = {
+
+seed: {
+x: width / 2 - 20,
+color:
+"rgb(190,26,37)",
+scale: 2
+},
+
+branch: [
+[535,680,570,250,
+500,200,30,100,[
+
+[540,500,455,417,
+340,400,13,100,[
+
+[450,435,434,430,
+394,395,2,40]
+
+]],
+
+[550,445,600,356,
+680,345,12,100,[
+
+[578,400,648,409,
+661,426,3,80]
+
+]]
+
+]]
+],
+
+bloom:{
+num:700,
+width:1080,
+height:650
+},
+
+footer:{
+width:1200,
+height:5,
+speed:10
+}
+};
+
+var tree =
+new Tree(
+canvas[0],
+width,
+height,
+opts
+);
+
+var seed =
+tree.seed;
+
+var foot =
+tree.footer;
+
+var hold = 1;
+
+canvas.click(
+function(e){
+
+var offset=
+canvas.offset();
+
+var x=
+e.pageX
+-offset.left;
+
+var y=
+e.pageY
+-offset.top;
+
+if(seed.hover(
+x,y)){
+
+hold=0;
+
+canvas.unbind(
+"click");
+
+canvas.unbind(
+"mousemove");
+
+canvas
+.removeClass(
+'hand');
+}
+
+})
+
+.mousemove(
+function(e){
+
+var offset=
+canvas.offset();
+
+var x=
+e.pageX
+-offset.left;
+
+var y=
+e.pageY
+-offset.top;
+
+canvas
+.toggleClass(
+'hand',
+seed.hover(
+x,y));
+});
+
+var seedAnimate=
+eval(
+Jscex.compile(
+"async",
+function(){
+
+seed.draw();
+
+while(hold){
+$await(
+Jscex.Async
+.sleep(10));
+}
+
+while(
+seed.canScale()){
+
+seed.scale(
+0.95);
+
+$await(
+Jscex.Async
+.sleep(10));
+}
+
+while(
+seed.canMove()){
+
+seed.move(
+0,2);
+
+foot.draw();
+
+$await(
+Jscex.Async
+.sleep(10));
+}
+
+}));
+
+var growAnimate=
+eval(
+Jscex.compile(
+"async",
+function(){
+
+do{
+tree.grow();
+
+$await(
+Jscex.Async
+.sleep(10));
+
+}while(
+tree.canGrow());
+
+}));
+
+var flowAnimate=
+eval(
+Jscex.compile(
+"async",
+function(){
+
+do{
+
+tree.flower(2);
+
+$await(
+Jscex.Async
+.sleep(10));
+
+}while(
+tree.canFlower());
+
+}));
+
+var textAnimate=
+eval(
+Jscex.compile(
+"async",
+function(){
+
+$("#code")
+.show()
+.typewriter();
+
+}));
+
+var runAsync=
+eval(
+Jscex.compile(
+"async",
+function(){
+
+$await(
+seedAnimate());
+
+$await(
+growAnimate());
+
+$await(
+flowAnimate());
+
+textAnimate()
+.start();
+
+}));
+
+runAsync()
+.start();
+
+})();
+</script>
+
 </body>
 </html>
+```
